@@ -11,6 +11,9 @@ const Nav = () => {
                 <li>
                     <Link href='/book'>Books</Link>
                 </li>
+                <li>
+                    <Link href='/wine'>Wines</Link>
+                </li>
             </ul>
         </nav>
     )

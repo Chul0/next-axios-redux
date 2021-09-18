@@ -3,7 +3,7 @@ import axios from 'axios'
 export default function Home() {
   return (
     <div>
-      hello from home
+      Hello from home
     </div>
   )
 }
