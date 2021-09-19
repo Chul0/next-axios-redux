@@ -2,6 +2,7 @@ import axios from "axios"
 import wineStyles from '../styles/Books.module.css'
 
 const wine = ({data}) => {
+    // console.log(data);
     return (
         <>
             <h1>Wines</h1>
@@ -19,7 +20,7 @@ const wine = ({data}) => {
 
 export const getStaticProps = async () => {
     const { data } = await axios.get(`http://myapi-profstream.herokuapp.com/api/21a11f/wines`)
-    console.log(data);
+    // console.log(data);
     return {
         props: {
             data

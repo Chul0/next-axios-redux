@@ -1,9 +1,24 @@
-import Head from 'next/head'
-import axios from 'axios'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react';
+import { fetchposts } from '../store/actions/postAction';
+
+
 export default function Home() {
+
+  const dispatch = useDispatch();
+  const { posts } = useSelector(state => state.post);
+
+
+  useEffect(() => {
+    dispatch(fetchposts())
+  }, [])
+
+
   return (
     <div>
-      Hello from home
+      {posts && posts.map( item => (
+        <h1 key={item}>{item}</h1>
+      ))}
     </div>
   )
 }
