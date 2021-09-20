@@ -17,7 +17,13 @@ const book = ({books}) => {
 }
 
 export const getStaticProps = async () => {
-    const res = await axios.get(`http://myapi-profstream.herokuapp.com/api/19fc0e/books`)
+    const res = await axios.get(`type: API,
+    payload: {
+        url: "http://myapi-profstream.herokuapp.com/api/19fc0e/books",
+        method: "GET",
+        data: null,
+        onSuccess: 
+    }`)
     const books = await res.data
     return {
         props:{

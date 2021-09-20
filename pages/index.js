@@ -7,8 +7,7 @@ export default function Home() {
 
   const dispatch = useDispatch();
   const { posts } = useSelector(state => state.post);
-
-
+ 
   useEffect(() => {
     dispatch(fetchposts())
   }, [])
@@ -16,8 +15,12 @@ export default function Home() {
 
   return (
     <div>
-      {posts && posts.map( item => (
-        <h1 key={item}>{item}</h1>
+      {posts && posts[0].map( books => (
+        <>
+          <p>Stored fetched data in Redux store and </p>
+          <h1 key={books.id}>{books.title}</h1>
+          <p>by {books.author}</p>
+        </>
       ))}
     </div>
   )
