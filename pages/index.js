@@ -15,13 +15,17 @@ export default function Home() {
 
   return (
     <div>
-      {posts && posts[0].map( books => (
+      {posts.length ?
+       posts[0].map( books => (
         <>
-          <p>Stored fetched data in Redux store and </p>
+          <p>Stored fetched data in Redux store</p>
           <h1 key={books.id}>{books.title}</h1>
           <p>by {books.author}</p>
         </>
-      ))}
+      ))
+    :
+    <p>Loading...</p>
+    }
     </div>
   )
 }
